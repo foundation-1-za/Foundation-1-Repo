@@ -1,0 +1,262 @@
+.page {
+    background-color: var(--color-bg);
+}
+
+/* ===== HERO ===== */
+.hero {
+    padding: var(--space-32) var(--page-padding) var(--space-24);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.heroInner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.heroContent {
+    max-width: 700px;
+}
+
+.heroAction {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .heroInner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-6);
+    }
+}
+
+.pageTitle {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.03em;
+    color: var(--color-black);
+    margin-bottom: var(--space-6);
+}
+
+.pageSubtitle {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+    max-width: 600px;
+}
+
+/* ===== SECTION HEADERS ===== */
+.sectionHeader {
+    margin-bottom: var(--space-12);
+}
+
+.sectionTitle {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.02em;
+    color: var(--color-black);
+    margin-bottom: var(--space-4);
+}
+
+.sectionSubtitle {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    max-width: 560px;
+    line-height: var(--leading-relaxed);
+}
+
+/* ===== ROLE GRID ===== */
+.roleGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-8);
+}
+
+.roleCard {
+    padding: var(--space-10);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-bg-surface);
+}
+
+.roleCardTitle {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+}
+
+.roleCardText {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ===== COMPENSATION STEPS ===== */
+.compGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+.compCard {
+    padding: var(--space-10);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-bg-surface);
+    display: flex;
+    flex-direction: column;
+}
+
+.compNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-5);
+    flex-shrink: 0;
+}
+
+.compCardTitle {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+}
+
+.compCardText {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ===== SUCCESS / PITFALLS GRID ===== */
+.criteriaGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+}
+
+.criteriaCard {
+    padding: var(--space-10);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-bg-surface);
+}
+
+.criteriaCardTitle {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-6);
+}
+
+.criteriaList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.criteriaItem {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+.criteriaCheck {
+    color: var(--color-success);
+    font-weight: var(--weight-bold);
+    flex-shrink: 0;
+}
+
+.criteriaX {
+    color: var(--color-error);
+    font-weight: var(--weight-bold);
+    flex-shrink: 0;
+}
+
+/* ===== EXPECTATIONS ===== */
+.expectGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+}
+
+.expectCard {
+    padding: var(--space-10);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background-color: var(--color-bg-surface);
+}
+
+.expectCardTitle {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    margin-bottom: var(--space-3);
+}
+
+.expectCardText {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+}
+
+/* ===== CTA ===== */
+.finalCta {
+    padding: var(--space-24) var(--page-padding);
+    border-top: 1px solid var(--color-border-light);
+    text-align: center;
+}
+
+.finalCtaTitle {
+    font-size: var(--text-3xl);
+    font-weight: var(--weight-bold);
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-4);
+}
+
+.finalCtaText {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero {
+        padding-top: var(--space-20);
+        padding-bottom: var(--space-16);
+    }
+
+    .roleGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .compGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .criteriaGrid,
+    .expectGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .finalCta {
+        padding-top: var(--space-16);
+        padding-bottom: var(--space-16);
+    }
+}
+
+@media (max-width: 480px) {
+    .compGrid {
+        grid-template-columns: 1fr;
+    }
+}

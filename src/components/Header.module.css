@@ -1,0 +1,183 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding: var(--space-4) var(--page-padding);
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+}
+
+.logoMark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
+.logoText {
+    font-size: var(--text-lg);
+    font-weight: var(--weight-semibold);
+    color: var(--color-black);
+    letter-spacing: -0.5px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+.navLink {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+    text-decoration: none;
+}
+
+.navLink:hover {
+    color: var(--color-text-primary);
+}
+
+.navLinkActive {
+    color: var(--color-text-primary);
+}
+
+.navCta {
+    margin-left: var(--space-4);
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: var(--space-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burgerLine {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--color-black);
+    transition: all var(--transition-fast);
+    transform-origin: center;
+}
+
+.burgerLineOpen1 {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.burgerLineOpen2 {
+    opacity: 0;
+}
+
+.burgerLineOpen3 {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .inner {
+        padding: var(--space-4);
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-6);
+        background-color: var(--color-bg-surface);
+        transform: translateX(100%);
+        transition: transform var(--transition-slow);
+        z-index: 200;
+        /* Reset flex: 1 from desktop */
+        flex: 0 0 auto;
+        height: 100vh;
+    }
+
+    .navOpen {
+        transform: translateX(0);
+    }
+
+    .navLinks {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        gap: var(--space-6);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navActions {
+        margin-left: 0;
+        margin-top: var(--space-8);
+        flex-direction: column;
+        gap: var(--space-6);
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navLink {
+        font-size: var(--text-2xl);
+        padding: var(--space-2) 0;
+        width: auto;
+        border-bottom: none;
+        text-align: center;
+    }
+
+    .navCta {
+        margin-left: 0;
+        width: auto;
+        min-width: 200px;
+        text-align: center;
+    }
+
+    .burger {
+        z-index: 201;
+    }
+}

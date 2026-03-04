@@ -1,0 +1,116 @@
+.footer {
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-bg);
+}
+
+.inner {
+    margin: 0 auto;
+    padding: var(--space-16) var(--page-padding) var(--space-8);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: var(--space-12);
+    margin-bottom: var(--space-12);
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.logoMark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.logoText {
+    font-size: var(--text-base);
+    font-weight: var(--weight-semibold);
+    color: var(--color-black);
+}
+
+.tagline {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    max-width: 280px;
+    line-height: var(--leading-relaxed);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.columnTitle {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-tertiary);
+    margin-bottom: var(--space-2);
+}
+
+.link {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.link:hover {
+    color: var(--color-text-primary);
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.copyright {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+}
+
+.partner {
+    font-size: var(--text-xs);
+    color: var(--color-text-tertiary);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+    }
+
+    .brand {
+        grid-column: 1 / -1;
+    }
+
+    .bottom {
+        flex-direction: column;
+        gap: var(--space-2);
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}

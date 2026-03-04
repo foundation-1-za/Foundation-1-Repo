@@ -1,0 +1,2 @@
+name = "auto-create-profile"
+verify_jwt = false
