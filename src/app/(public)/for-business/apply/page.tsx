@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Wizard from '@/components/Wizard';
@@ -8,7 +8,7 @@ import { useAuth } from '@/lib/auth-context';
 import { ArrowLeft } from 'lucide-react';
 import styles from './page.module.css';
 
-export default function BusinessApplicationPage() {
+function BusinessApplicationForm() {
     const router = useRouter();
     const searchParams = useSearchParams();
     const { login } = useAuth();
@@ -307,10 +307,10 @@ export default function BusinessApplicationPage() {
             <div className={styles.formGroup}>
                 <label className={styles.label}>Latest Utility Bill (PDF)</label>
                 <div className={styles.fileUpload}>
-                    <input 
-                        type="file" 
-                        onChange={handleFileUpload} 
-                        accept=".pdf,.png,.jpg" 
+                    <input
+                        type="file"
+                        onChange={handleFileUpload}
+                        accept=".pdf,.png,.jpg"
                         disabled={formData.skipUtilityBill}
                     />
                     {formData.utilityBillFileName && <p>Selected: {formData.utilityBillFileName}</p>}
@@ -471,6 +471,13 @@ export default function BusinessApplicationPage() {
                     isLoading={isLoading}
                 />
             </div>
-        </main>
+        </main>);
+}
+
+export default function BusinessApplicationPage() {
+    return (
+        <Suspense fallback={<div>Loading application...</div>}>
+            <BusinessApplicationForm />
+        </Suspense>
     );
 }

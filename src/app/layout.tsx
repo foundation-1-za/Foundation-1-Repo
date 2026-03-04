@@ -11,23 +11,27 @@ export const metadata: Metadata = {
   keywords: 'Foundation-1, Generocity, solar, South Africa, zero capex, business energy, Green Share VPP, renewable energy',
 };
 
+import { ClerkProvider } from '@clerk/nextjs';
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <ThemeProvider>
-          <AuthProvider>
-            <RealtimeProvider>
-              {children}
-              <RealtimeNotificationToast />
-            </RealtimeProvider>
-          </AuthProvider>
-        </ThemeProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <ThemeProvider>
+            <AuthProvider>
+              <RealtimeProvider>
+                {children}
+                <RealtimeNotificationToast />
+              </RealtimeProvider>
+            </AuthProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
